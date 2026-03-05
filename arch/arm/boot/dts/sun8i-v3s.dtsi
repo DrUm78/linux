@@ -233,7 +233,7 @@
 			resets = <&ccu RST_BUS_MMC0>;
 			reset-names = "ahb";
 			interrupts = <GIC_SPI 60 IRQ_TYPE_LEVEL_HIGH>;
-			status = "okay";
+			status = "disabled";
 			#address-cells = <1>;
 			#size-cells = <0>;
 		};
@@ -288,7 +288,7 @@
 			phys = <&usbphy 0>;
 			phy-names = "usb";
 			extcon = <&usbphy 0>;
-			status = "okay";
+			status = "disabled";
 		};
 
 		usbphy: phy@01c19400 {
@@ -301,7 +301,7 @@
 			clock-names = "usb0_phy";
 			resets = <&ccu RST_USB_PHY0>;
 			reset-names = "usb0_reset";
-			status = "okay";
+			status = "disabled";
 			#phy-cells = <1>;
 			pinctrl-names = "default";
 			pinctrl-0 = <&usb0_vbus_detect_pin>;
@@ -314,7 +314,7 @@
 			interrupts = <GIC_SPI 72 IRQ_TYPE_LEVEL_HIGH>;
 			clocks = <&ccu CLK_BUS_EHCI0>, <&ccu CLK_BUS_OHCI0>;
 			resets = <&ccu RST_BUS_EHCI0>, <&ccu RST_BUS_OHCI0>;
-			status = "okay";
+			status = "disabled";
 		};
 
 		ohci0: usb@01c1a400 {
@@ -324,7 +324,7 @@
 			clocks = <&ccu CLK_BUS_EHCI0>, <&ccu CLK_BUS_OHCI0>,
 				 <&ccu CLK_USB_OHCI0>;
 			resets = <&ccu RST_BUS_EHCI0>, <&ccu RST_BUS_OHCI0>;
-			status = "okay";
+			status = "disabled";
 		};
 
 		ccu: clock@01c20000 {
@@ -426,7 +426,7 @@
 			reg = <0x01c21400 0x400>;
 			clocks = <&osc24M>;
 			#pwm-cells = <3>;
-			status = "okay";
+			status = "disabled";
 		};
 
 		lradc: lradc@1c22800 {
@@ -447,13 +447,13 @@
 			dmas = <&dma 15>, <&dma 15>;
 			dma-names = "rx", "tx";
 			allwinner,codec-analog-controls = <&codec_analog>;
-			status = "okay";
+			status = "disabled";
 		};
 
 		codec_analog: codec-analog@01c23000 {
 			compatible = "allwinner,sun8i-v3s-codec-analog";
 			reg = <0x01c23000 0x4>;
-			status = "okay";
+			status = "disabled";
 		};
 
 		uart0: serial@01c28000 {
@@ -464,7 +464,7 @@
 			reg-io-width = <4>;
 			clocks = <&ccu CLK_BUS_UART0>;
 			resets = <&ccu RST_BUS_UART0>;
-			status = "okay";
+			status = "disabled";
 		};
 
 		uart1: serial@01c28400 {
@@ -497,7 +497,7 @@
 			resets = <&ccu RST_BUS_I2C0>;
 			pinctrl-names = "default";
 			pinctrl-0 = <&i2c0_pins>;
-			status = "okay";
+			status = "disabled";
 			#address-cells = <1>;
 			#size-cells = <0>;
 		};
@@ -553,7 +553,7 @@
 			pinctrl-names = "default";
 			pinctrl-0 = <&spi0_pins>;
 			resets = <&ccu RST_BUS_SPI0>;
-			status = "okay";
+			status = "disabled";
 			#address-cells = <1>;
 			#size-cells = <0>;
 		};
